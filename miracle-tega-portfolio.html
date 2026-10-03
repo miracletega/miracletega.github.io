@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Miracle Tega | Copywriter &amp; Social Media Manager</title>
+<meta name="description" content="Miracle Tega is a copywriter and social media manager creating sharp copy, engaging social content and practical content strategies for brands.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* =====================================================================
+   1. TOKENS  (edit colours and fonts here)
+   ===================================================================== */
+:root {
+  --espresso: #1C1714;
+  --cream: #F7F0E6;
+  --terracotta: #C96B52;
+  --blush: #E8B7A5;
+  --taupe: #8C7968;
+
+  /* Supporting shades derived from the palette (for contrast and soft panels) */
+  --cream-deep: #EEE3D2;   /* soft panel behind work samples */
+  --taupe-deep: #6B5B4E;   /* taupe made dark enough for small text */
+  --line: rgba(28, 23, 20, .16);
+
+  --serif: 'Bodoni Moda', 'Didot', 'Playfair Display', Georgia, serif;
+  --sans: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --gutter: clamp(1.25rem, 5vw, 3rem);
+  --max: 1160px;
+}
+
+/* =====================================================================
+   2. BASE
+   ===================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--espresso);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, blockquote { font-family: var(--serif); margin: 0; }
+h2 { font-weight: 800; font-size: clamp(2.4rem, 6vw, 4.25rem); line-height: 1.02; letter-spacing: -0.02em; }
+p { margin: 0 0 1em; }
+ul, ol, dl, dd { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--terracotta); outline-offset: 3px; }
+section[id] { scroll-margin-top: 3.5rem; }
+.wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: .8rem 1.65rem;
+  font: 600 .98rem var(--sans);
+  text-decoration: none;
+  border: 1.5px solid var(--espresso);
+  border-radius: 2px;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.btn-solid { background: var(--espresso); color: var(--cream); }
+.btn-solid:hover { background: var(--terracotta); border-color: var(--terracotta); color: var(--espresso); }
+.btn-line { background: transparent; color: var(--espresso); }
+.btn-line:hover { background: var(--espresso); color: var(--cream); }
+
+/* =====================================================================
+   3. NAVIGATION
+   ===================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(247, 240, 230, .94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.nav {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: .85rem var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .25rem 1.5rem;
+}
+.wordmark { font-family: var(--serif); font-weight: 700; font-size: 1.45rem; letter-spacing: -0.01em; text-decoration: none; }
+.nav ul { display: flex; gap: clamp(1rem, 3vw, 2rem); font-weight: 500; font-size: .95rem; }
+.nav ul a { text-decoration: none; padding: .35rem 0; background: linear-gradient(var(--terracotta), var(--terracotta)) no-repeat 0 100% / 0 2px; transition: background-size .25s ease; }
+.nav ul a:hover { background-size: 100% 2px; }
+
+/* =====================================================================
+   4. HERO
+   ===================================================================== */
+.hero { padding: clamp(3rem, 8vw, 6.5rem) 0 clamp(4rem, 9vw, 7.5rem); }
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr);
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: end;
+}
+.hero-name { font-weight: 600; font-size: 1.05rem; letter-spacing: .3em; text-transform: uppercase; margin: 0 0 .15rem; }
+.hero-role { color: var(--taupe-deep); font-weight: 500; margin: 0; }
+.hero-rule { width: 3.5rem; height: 2px; background: var(--terracotta); margin: 1.5rem 0 2rem; }
+.hero h1 {
+  font-weight: 700;
+  font-size: clamp(2.5rem, 6.3vw, 4.75rem);
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+  margin-bottom: 1.75rem;
+}
+.hero h1 .alt { display: block; font-style: italic; font-weight: 500; color: var(--terracotta); margin-top: .2em; }
+.hero-lede { font-size: 1.2rem; max-width: 30em; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+
+.hero-figure { position: relative; justify-self: end; width: min(100%, 340px); margin: 0 14px 14px 0; }
+.hero-figure::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translate(14px, 14px);
+  border: 1.5px solid var(--terracotta);
+  border-radius: 999px 999px 0 0;
+}
+.arch {
+  position: relative;
+  aspect-ratio: 3 / 4.1;
+  background: var(--blush);
+  border-radius: 999px 999px 0 0;
+  padding: 1.5rem 1.75rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.arch .mark { position: absolute; top: 18%; left: 50%; transform: translateX(-50%); font-family: var(--serif); font-size: 5.5rem; line-height: 1; color: var(--terracotta); }
+.arch blockquote { font-style: italic; font-weight: 500; font-size: clamp(1.3rem, 2.4vw, 1.6rem); line-height: 1.22; margin-bottom: 1rem; }
+.arch figcaption { font-size: .85rem; font-weight: 500; }
+
+/* =====================================================================
+   5. WORK
+   ===================================================================== */
+.work { padding: clamp(3rem, 8vw, 5.5rem) 0 clamp(3rem, 8vw, 6rem); border-top: 1px solid var(--line); }
+.section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.25rem 4rem;
+  align-items: end;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+}
+.section-head p { max-width: 26em; color: var(--taupe-deep); font-size: 1.1rem; margin: 0; }
+
+.project {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+  padding: clamp(3rem, 7vw, 5rem) 0;
+  border-top: 1px solid var(--line);
+}
+.project:first-of-type { margin-top: clamp(1rem, 3vw, 2rem); }
+.project--flip { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); }
+.project--flip .meta { order: 2; }
+
+.kind { display: flex; align-items: baseline; gap: .6rem; margin-bottom: 1.25rem; }
+.kind .num { font-family: var(--serif); font-weight: 700; font-size: 2.75rem; line-height: 1; color: var(--terracotta); }
+.kind .label { font-weight: 600; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; }
+.meta h3 { font-weight: 700; font-size: clamp(2rem, 4.2vw, 2.8rem); line-height: 1.05; letter-spacing: -0.015em; }
+.meta h3 em { display: block; font-weight: 500; font-size: .62em; color: var(--taupe-deep); margin-top: .35rem; letter-spacing: 0; }
+.tag { display: inline-block; margin: 1.1rem 0 1.5rem; padding: .15rem .65rem; border: 1px solid var(--taupe); color: var(--taupe-deep); font-size: .8rem; font-weight: 500; }
+.brief > div { border-top: 1px solid var(--line); padding: .9rem 0; }
+.brief dt { font-weight: 600; font-size: .9rem; color: var(--taupe-deep); margin-bottom: .15rem; }
+.brief dd { max-width: 30em; }
+
+.stage {
+  background: var(--cream-deep);
+  padding: clamp(1.5rem, 5vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Instagram post preview */
+.phone {
+  width: 100%;
+  max-width: 330px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 28px 50px -28px rgba(28, 23, 20, .4);
+  overflow: hidden;
+  font-size: .9rem;
+  line-height: 1.5;
+}
+.ig-head { display: flex; align-items: center; gap: .6rem; padding: .7rem .9rem; font-weight: 600; }
+.avatar { display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; font-weight: 600; font-size: .85rem; flex: none; }
+.avatar.brand { background: var(--terracotta); color: var(--espresso); }
+.avatar.guest { background: var(--blush); color: var(--espresso); }
+.ig-img { aspect-ratio: 1; background: var(--blush); padding: 1.4rem; display: flex; flex-direction: column; justify-content: space-between; }
+.ig-img .shop { font-weight: 600; font-size: .85rem; }
+.ig-img .line { font-family: var(--serif); font-weight: 800; font-size: clamp(2.2rem, 8vw, 2.9rem); line-height: .98; letter-spacing: -0.02em; }
+.ig-img .line::after { content: ""; display: block; width: 3rem; height: 3px; background: var(--terracotta); margin-top: .9rem; }
+.ig-actions { display: flex; gap: .9rem; padding: .7rem .9rem .2rem; }
+.ig-actions svg { width: 22px; height: 22px; fill: none; stroke: var(--espresso); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.ig-caption { padding: .3rem .9rem 1rem; }
+.ig-caption p { margin: 0 0 .6em; }
+.ig-caption .tags { color: var(--taupe-deep); margin: 0; }
+
+/* Ad headline panels */
+.ads { display: grid; gap: .9rem; width: 100%; max-width: 480px; }
+.ad { padding: 1.4rem 1.5rem 1.2rem; display: flex; flex-direction: column; gap: 1.1rem; box-shadow: 0 18px 36px -24px rgba(28, 23, 20, .45); }
+.ad .brandline { display: flex; justify-content: space-between; gap: 1rem; font-size: .82rem; font-weight: 600; }
+.ad p { margin: 0; font-family: var(--serif); font-weight: 700; font-size: clamp(1.35rem, 3.6vw, 1.75rem); line-height: 1.15; letter-spacing: -0.01em; }
+.ad-relief { background: var(--blush); }
+.ad-simple { background: var(--espresso); color: var(--cream); }
+.ad-proof { background: var(--terracotta); }
+
+/* Short-video preview + hook list */
+.tt-wrap { display: flex; align-items: center; justify-content: center; gap: clamp(1.5rem, 4vw, 2.5rem); flex-wrap: wrap; width: 100%; }
+.tt {
+  width: 220px;
+  aspect-ratio: 9 / 16;
+  background: var(--espresso);
+  color: var(--cream);
+  border: 6px solid #3a302a;
+  border-radius: 22px;
+  padding: 1.25rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 28px 50px -28px rgba(28, 23, 20, .5);
+}
+.tt .hook { margin: auto 0; text-align: center; font-family: var(--serif); font-weight: 700; font-size: 1.4rem; line-height: 1.55; }
+.tt .hook span { background: var(--cream); color: var(--espresso); padding: .08em .35em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.tt .bar { height: 3px; background: rgba(247, 240, 230, .25); }
+.tt .bar i { display: block; width: 38%; height: 100%; background: var(--terracotta); }
+.hooks { flex: 1 1 200px; max-width: 260px; }
+.hooks li { border-top: 1px solid var(--line); padding: .9rem 0; }
+.hooks small { display: block; font-weight: 600; font-size: .82rem; color: var(--taupe-deep); }
+.hooks span { font-family: var(--serif); font-weight: 700; font-size: 1.2rem; line-height: 1.25; }
+
+/* Comment thread */
+.thread { width: 100%; max-width: 420px; background: #fff; border: 1px solid var(--line); padding: 1.4rem; display: grid; gap: 1.1rem; box-shadow: 0 28px 50px -30px rgba(28, 23, 20, .4); }
+.comment { display: grid; grid-template-columns: 2rem 1fr; gap: .75rem; font-size: .95rem; line-height: 1.5; }
+.comment p { margin: 0; }
+.comment.reply { margin-left: 2.75rem; padding-left: .9rem; border-left: 2px solid var(--blush); }
+.badge { display: inline-block; margin-left: .3rem; padding: 0 .4rem; background: var(--cream-deep); font-size: .72rem; font-weight: 600; }
+
+/* Week plan */
+.week { width: 100%; max-width: 480px; position: relative; }
+.week::before { content: ""; position: absolute; left: .38rem; top: 1.2rem; bottom: 1.2rem; width: 2px; background: var(--terracotta); }
+.week li { position: relative; padding: .8rem 0 .8rem 2rem; }
+.week li::before { content: ""; position: absolute; left: 0; top: 1.15rem; width: .8rem; height: .8rem; border-radius: 50%; background: var(--terracotta); border: 2px solid var(--cream-deep); box-sizing: content-box; margin-left: -2px; }
+.week .head { display: flex; align-items: baseline; gap: .7rem; }
+.week .day { font-family: var(--serif); font-weight: 700; font-size: 1.25rem; }
+.week .fmt { font-size: .78rem; font-weight: 600; padding: 0 .5rem; border: 1px solid var(--taupe); color: var(--taupe-deep); }
+.week p { margin: .15rem 0 0; font-size: .98rem; line-height: 1.5; }
+
+/* =====================================================================
+   6. SERVICES
+   ===================================================================== */
+.services { background: var(--espresso); color: var(--cream); padding: clamp(4rem, 9vw, 7rem) 0; }
+.services :focus-visible { outline-color: var(--cream); }
+.services-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 3rem clamp(2rem, 6vw, 5rem); }
+.services-intro p { color: rgba(247, 240, 230, .75); max-width: 20em; margin-top: 1.25rem; }
+.cats { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem clamp(1.5rem, 4vw, 3rem); }
+.cat h3 { font-weight: 700; font-size: 1.9rem; letter-spacing: -0.01em; color: var(--blush); margin-bottom: 1rem; }
+.cat li { border-top: 1px solid rgba(247, 240, 230, .2); padding: .8rem 0; }
+.tools { grid-column: 1 / -1; border-top: 1px solid rgba(247, 240, 230, .2); padding-top: 1.75rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: .6rem 2rem; }
+.tools h3 { font-family: var(--sans); font-weight: 600; font-size: .95rem; color: var(--blush); }
+.tools ul { display: flex; flex-wrap: wrap; gap: .25rem 0; font-size: 1.1rem; }
+.tools li:not(:last-child)::after { content: "\2022"; margin: 0 .8rem; color: var(--terracotta); }
+
+/* =====================================================================
+   7. ABOUT
+   ===================================================================== */
+.about { padding: clamp(4rem, 9vw, 7rem) 0; }
+.about-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 2rem clamp(2rem, 6vw, 5rem); }
+.about .lead { font-family: var(--serif); font-weight: 500; font-size: clamp(1.6rem, 3.4vw, 2.3rem); line-height: 1.22; letter-spacing: -0.01em; margin-bottom: 1.5rem; max-width: 22em; }
+.about p { max-width: 34em; }
+.steps { counter-reset: step; margin-top: 1.75rem; max-width: 34em; }
+.steps li { counter-increment: step; display: grid; grid-template-columns: 2.5rem 1fr; align-items: baseline; border-top: 1px solid var(--line); padding: .85rem 0; font-weight: 500; }
+.steps li::before { content: counter(step); font-family: var(--serif); font-weight: 700; font-size: 1.5rem; color: var(--terracotta); }
+
+/* =====================================================================
+   8. CONTACT + FOOTER
+   ===================================================================== */
+.contact { background: var(--terracotta); color: var(--espresso); padding: clamp(4rem, 10vw, 8rem) 0; }
+.contact :focus-visible { outline-color: var(--espresso); }
+.contact h2 { font-size: clamp(2.5rem, 7.5vw, 5.25rem); max-width: 12em; }
+.contact p { font-size: 1.2rem; max-width: 28em; margin: 1.5rem 0 2rem; }
+.contact .btn-solid:hover { background: var(--cream); border-color: var(--cream); color: var(--espresso); }
+.contact-links { display: flex; flex-wrap: wrap; gap: .5rem 2.5rem; margin-top: 2.25rem; font-weight: 500; }
+.contact-links a { text-underline-offset: 4px; }
+footer { background: var(--espresso); color: rgba(247, 240, 230, .75); padding: 1.5rem 0; font-size: .95rem; }
+
+/* =====================================================================
+   9. RESPONSIVE
+   ===================================================================== */
+@media (max-width: 900px) {
+  .hero-grid, .section-head, .services-grid, .about-grid { grid-template-columns: 1fr; }
+  .hero-figure { justify-self: start; width: min(84%, 320px); }
+  .project, .project--flip { grid-template-columns: 1fr; gap: 1.75rem; }
+  .project--flip .meta { order: 0; }
+  .stage { padding: 1.5rem 1rem; }
+}
+@media (max-width: 560px) {
+  .wordmark { font-size: 1.25rem; }
+  .cats { grid-template-columns: 1fr; }
+  .hero-actions .btn { flex: 1 1 100%; }
+  .tools li:not(:last-child)::after { margin: 0 .55rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <nav class="nav" aria-label="Main">
+    <a class="wordmark" href="#top">Miracle Tega</a>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="hero-name">Miracle Tega</p>
+        <p class="hero-role">Copywriter &bull; Social Media Manager</p>
+        <div class="hero-rule" aria-hidden="true"></div>
+        <h1>Words that make people stop scrolling. <span class="alt">Content that makes brands easier to notice.</span></h1>
+        <p class="hero-lede">I create sharp copy, engaging social content and practical content strategies for brands that want to communicate better online.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="#work">View my work</a>
+          <a class="btn btn-line" href="#contact">Let&rsquo;s work together</a>
+        </div>
+      </div>
+
+      <figure class="hero-figure">
+        <div class="arch">
+          <span class="mark" aria-hidden="true">&ldquo;</span>
+          <blockquote>Your guests will forget the playlist. They will not forget the puff-puff.</blockquote>
+          <figcaption>Line from a concept caption for Crisp &amp; Co.</figcaption>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ SELECTED WORK ============ -->
+  <section class="work" id="work" aria-labelledby="work-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="work-title">Selected Work</h2>
+        <p>Concept projects created to demonstrate my approach to copywriting and social media.</p>
+      </div>
+
+      <!-- Project 1 -->
+      <article class="project">
+        <div class="meta">
+          <div class="kind"><span class="num" aria-hidden="true">01</span><span class="label">/ Social media copy</span></div>
+          <h3>Crisp &amp; Co.<em>Weekend Party Campaign</em></h3>
+          <span class="tag">Concept project</span>
+          <dl class="brief">
+            <div><dt>Objective</dt><dd>Increase Saturday small-chops orders.</dd></div>
+            <div><dt>Approach</dt><dd>Use relatable party language and urgency to encourage customers to place orders before the deadline.</dd></div>
+          </dl>
+        </div>
+        <div class="stage">
+          <div class="phone">
+            <div class="ig-head"><span class="avatar brand" aria-hidden="true">C</span>crispandco</div>
+            <div class="ig-img">
+              <span class="shop">Crisp &amp; Co. Small Chops</span>
+              <span class="line">Chops on the table by 4.</span>
+            </div>
+            <div class="ig-actions" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.600-7.500 10.200-7.500 10.200z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M20.500 11.500a8.500 8.500 0 0 1-12.300 7.600L3.500 20.500l1.400-4.600A8.500 8.500 0 1 1 20.500 11.500z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M21 3 10.500 13.500M21 3l-6.500 18-4-7.500L3 9.500 21 3z"/></svg>
+            </div>
+            <div class="ig-caption">
+              <p><strong>crispandco</strong> Your guests will forget the playlist. They will not forget the puff-puff.</p>
+              <p>Samosas, spring rolls, peppered gizzard and puff-puff, packed hot and delivered before your doorbell rings.</p>
+              <p>Saturday orders close Thursday at 6pm. Tap the link in bio or DM us your guest count.</p>
+              <p class="tags">#SmallChops #PartyFood #OrderNow</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project project--flip">
+        <div class="meta">
+          <div class="kind"><span class="num" aria-hidden="true">02</span><span class="label">/ Ad copy</span></div>
+          <h3>Dew &amp; Co.<em>Harmattan Ad Headlines</em></h3>
+          <span class="tag">Concept project</span>
+          <dl class="brief">
+            <div><dt>Objective</dt><dd>Give a shea butter skincare brand three different headlines to test before the dry season.</dd></div>
+            <div><dt>Approach</dt><dd>Each headline leads with a different motivation: relief, simplicity and social proof. Testing them side by side shows which one moves people to act.</dd></div>
+          </dl>
+        </div>
+        <div class="stage">
+          <div class="ads">
+            <div class="ad ad-relief">
+              <div class="brandline"><span>Dew &amp; Co.</span><span>Angle: relief</span></div>
+              <p>Harmattan is coming. Your skin doesn&rsquo;t have to flake with it.</p>
+            </div>
+            <div class="ad ad-simple">
+              <div class="brandline"><span>Dew &amp; Co.</span><span>Angle: simplicity</span></div>
+              <p>One jar. Two ingredients. Zero ashy knees.</p>
+            </div>
+            <div class="ad ad-proof">
+              <div class="brandline"><span>Dew &amp; Co.</span><span>Angle: social proof</span></div>
+              <p>Everyone in the group chat keeps asking what you&rsquo;re using.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project">
+        <div class="meta">
+          <div class="kind"><span class="num" aria-hidden="true">03</span><span class="label">/ Short-form content</span></div>
+          <h3>Student Study Planner<em>Short-Video Hook Series</em></h3>
+          <span class="tag">Concept project</span>
+          <dl class="brief">
+            <div><dt>Objective</dt><dd>Win the first seconds of attention on TikTok and make people stay to see the planner.</dd></div>
+            <div><dt>Approach</dt><dd>Three hook styles for three moods: a confession, a command and a reframe. Each one is short enough to read at a glance.</dd></div>
+          </dl>
+        </div>
+        <div class="stage">
+          <div class="tt-wrap">
+            <div class="tt">
+              <p class="hook"><span>I failed one test and built this planner.</span></p>
+              <div class="bar" aria-hidden="true"><i></i></div>
+            </div>
+            <ul class="hooks">
+              <li><small>Confession</small><span>I failed one test and built this planner.</span></li>
+              <li><small>Command</small><span>Stop studying like this.</span></li>
+              <li><small>Reframe</small><span>Your timetable isn&rsquo;t the problem. Your Sunday is.</span></li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="project project--flip">
+        <div class="meta">
+          <div class="kind"><span class="num" aria-hidden="true">04</span><span class="label">/ Community management</span></div>
+          <h3>Crisp &amp; Co.<em>Late Delivery Reply</em></h3>
+          <span class="tag">Concept project</span>
+          <dl class="brief">
+            <div><dt>Objective</dt><dd>Turn a public complaint into a moment that shows the brand cares.</dd></div>
+            <div><dt>Approach</dt><dd>Apologise once and mean it, keep the tone warm and direct, and move the conversation to DMs with a clear next step.</dd></div>
+          </dl>
+        </div>
+        <div class="stage">
+          <div class="thread">
+            <div class="comment">
+              <span class="avatar guest" aria-hidden="true">T</span>
+              <p><strong>tola.eats</strong> Order came 40 minutes late &#128548;</p>
+            </div>
+            <div class="comment reply">
+              <span class="avatar brand" aria-hidden="true">C</span>
+              <p><strong>crispandco</strong><span class="badge">Brand</span> Sorry about that, Tola. Late is not how we want your party to start. DM us your order number and we&rsquo;ll make it right today.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 5 -->
+      <article class="project">
+        <div class="meta">
+          <div class="kind"><span class="num" aria-hidden="true">05</span><span class="label">/ Content planning</span></div>
+          <h3>Campus Thrift Pop-Up<em>One-Week Content Plan</em></h3>
+          <span class="tag">Concept project</span>
+          <dl class="brief">
+            <div><dt>Objective</dt><dd>Build anticipation for a one-day pop-up and bring people through the door on launch day.</dd></div>
+            <div><dt>Approach</dt><dd>Move from mystery to detail across the week: tease, show the team, involve the audience, share the details, then go live.</dd></div>
+          </dl>
+        </div>
+        <div class="stage">
+          <ol class="week">
+            <li>
+              <div class="head"><span class="day">Monday</span><span class="fmt">Post</span></div>
+              <p>Teaser: &ldquo;Something is coming to campus.&rdquo; No other details.</p>
+            </li>
+            <li>
+              <div class="head"><span class="day">Tuesday</span><span class="fmt">Reel</span></div>
+              <p>The team sorting and steaming the pieces.</p>
+            </li>
+            <li>
+              <div class="head"><span class="day">Wednesday</span><span class="fmt">Story</span></div>
+              <p>Poll: which jacket should go on the front rack?</p>
+            </li>
+            <li>
+              <div class="head"><span class="day">Thursday</span><span class="fmt">Story</span></div>
+              <p>Location, time and a countdown sticker.</p>
+            </li>
+            <li>
+              <div class="head"><span class="day">Friday</span><span class="fmt">Stories</span></div>
+              <p>Pop-up day. Live stories every two hours, and reposts of customer finds.</p>
+            </li>
+          </ol>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="services" id="services" aria-labelledby="services-title">
+    <div class="wrap services-grid">
+      <div class="services-intro">
+        <h2 id="services-title">What I Do</h2>
+        <p>Two sides of the same job: writing the words, then getting them in front of the right people.</p>
+      </div>
+
+      <div class="cats">
+        <div class="cat">
+          <h3>Copywriting</h3>
+          <ul>
+            <li>Social media captions</li>
+            <li>Ad copy</li>
+            <li>Product descriptions</li>
+            <li>Brand messaging</li>
+            <li>Short-form content</li>
+          </ul>
+        </div>
+        <div class="cat">
+          <h3>Social Media</h3>
+          <ul>
+            <li>Content planning</li>
+            <li>Content calendars</li>
+            <li>Caption writing</li>
+            <li>Community management</li>
+            <li>Page management</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tools">
+        <h3>Tools I Work With</h3>
+        <ul>
+          <li>Canva</li>
+          <li>CapCut</li>
+          <li>ChatGPT</li>
+          <li>Microsoft Office</li>
+          <li>AI tools</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="wrap about-grid">
+      <h2 id="about-title">About</h2>
+      <div>
+        <p class="lead">I&rsquo;m Miracle Tega, a copywriter and social media manager who likes turning ordinary ideas into content people actually want to read.</p>
+        <p>I care about clear messaging, strong hooks and content that sounds human rather than painfully corporate.</p>
+        <p>My approach is simple:</p>
+        <ol class="steps">
+          <li>Understand the audience</li>
+          <li>Find the angle</li>
+          <li>Write with intention</li>
+          <li>Make every word earn its place</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h2 id="contact-title">Got a brand that needs better words?</h2>
+      <p>Tell me about your brand, what you sell and who you want to reach. I&rsquo;ll reply with how I&rsquo;d approach it.</p>
+      <a class="btn btn-solid" href="https://wa.me/qr/4WPVSVCZTFFIC1">Let&rsquo;s work together</a>
+      <ul class="contact-links">
+        <li><a href="https://wa.me/qr/4WPVSVCZTFFIC1">WhatsApp</a></li>
+        <li><a href="mailto:iammiracletega07@gmail.com">iammiracletega07@gmail.com</a></li>
+        <li><a href="https://www.instagram.com/miracletegawrites?stkn=amZmOWEwbjU0dXh2">@miracletegawrites on Instagram</a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">Miracle Tega | Copywriter &amp; Social Media Manager</div>
+</footer>
+
+</body>
+</html>
